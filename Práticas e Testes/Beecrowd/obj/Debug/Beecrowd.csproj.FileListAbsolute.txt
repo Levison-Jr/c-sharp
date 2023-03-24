@@ -1,0 +1,8 @@
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\bin\Debug\Beecrowd.exe.config
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\bin\Debug\Beecrowd.exe
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\bin\Debug\Beecrowd.pdb
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\obj\Debug\Beecrowd.csproj.AssemblyReference.cache
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\obj\Debug\Beecrowd.csproj.SuggestedBindingRedirects.cache
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\obj\Debug\Beecrowd.csproj.CoreCompileInputs.cache
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\obj\Debug\Beecrowd.exe
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Beecrowd\obj\Debug\Beecrowd.pdb

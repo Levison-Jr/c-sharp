@@ -1,0 +1,8 @@
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\obj\Debug\Exercism.csproj.AssemblyReference.cache
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\obj\Debug\Exercism.csproj.SuggestedBindingRedirects.cache
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\obj\Debug\Exercism.csproj.CoreCompileInputs.cache
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\bin\Debug\Exercism.exe.config
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\bin\Debug\Exercism.exe
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\bin\Debug\Exercism.pdb
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\obj\Debug\Exercism.exe
+C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\Exercism\obj\Debug\Exercism.pdb
