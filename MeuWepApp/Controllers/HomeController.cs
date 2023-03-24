@@ -15,7 +15,8 @@ namespace MeuWepApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeModel home = new HomeModel("Levison Jr", "levisonjr21@gmail.com");
+            return View(home);
         }
 
         public IActionResult Privacy()
