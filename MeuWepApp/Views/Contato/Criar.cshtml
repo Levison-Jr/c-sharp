@@ -1,0 +1,45 @@
+﻿<h2 class="display-6">Adicionar novo contato</h2>
+
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Nome</label>
+    <input type="email" class="form-control" id="inputEmail4">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Email</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+
+  <div class="col-md-5">
+    <label for="inputCity" class="form-label">Celular</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+
+  <div class="col-md-4">
+    <label for="inputCity" class="form-label">Cidade</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+
+  <div class="col-md-3">
+    <label for="inputState" class="form-label">Estado</label>
+    <select id="inputState" class="form-select">
+      <option selected disabled>Selecione um estado</option>
+      <option>Bahia</option>
+      <option>São Paulo</option>
+      <option>Minas Gerais</option>
+      <option>Piauí</option>
+      <option>Rio de Janeiro</option>
+    </select>
+  </div>
+
+  <div class="col-md-3">
+    <label for="inputZip" class="form-label">CEP</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <a class="btn btn-secondary" role="button" asp-controller="Contato" asp-action="Index">Cancelar</a>
+  </div>
+</form>

@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\levis\OneDrive\Área de Trabalho\Estudos\C#\c-sharp\MeuWepApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/levis/OneDrive/Área de Trabalho/Estudos/C\#/c-sharp/MeuWepApp/Views/Contato/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/levis/OneDrive/Área de Trabalho/Estudos/C\#/c-sharp/MeuWepApp/Views/Contato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
