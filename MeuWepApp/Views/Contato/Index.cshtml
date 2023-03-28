@@ -26,8 +26,8 @@
           <td>73 99191-5643</td>
           <td>
               <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a role="button" class="btn btn-outline-primary">Editar</a>
-                <a role="button" class="btn btn-outline-danger">Apagar</a>
+                <a role="button" class="btn btn-outline-primary" asp-controller="Contato" asp-action="Editar">Editar</a>
+                <a role="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Apagar</a>
               </div>
           </td>
         </tr>
@@ -38,7 +38,7 @@
           <td>64 99965-2398</td>
           <td>
               <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a role="button" class="btn btn-outline-primary">Editar</a>
+                <a role="button" class="btn btn-outline-primary" asp-controller="Contato" asp-action="Editar">Editar</a>
                 <a role="button" class="btn btn-outline-danger">Apagar</a>
               </div>
           </td>
@@ -50,11 +50,30 @@
           <td>11 98834-0987</td>
           <td>
               <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a role="button" class="btn btn-outline-primary">Editar</a>
+                <a role="button" class="btn btn-outline-primary" asp-controller="Contato" asp-action="Editar">Editar</a>
                 <a role="button" class="btn btn-outline-danger">Apagar</a>
               </div>
           </td>
         </tr>
       </tbody>
     </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-uppercase" id="staticBackdropLabel">Alerta!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja realmente apagar este contato?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger">Sim</button>
+      </div>
+    </div>
+  </div>
 </div>

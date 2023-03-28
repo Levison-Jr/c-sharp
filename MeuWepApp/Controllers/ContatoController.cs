@@ -13,5 +13,10 @@ namespace MeuWepApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Editar()
+        {
+            return View();
+        }
     }
 }
