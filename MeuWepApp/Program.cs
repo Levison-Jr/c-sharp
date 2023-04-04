@@ -1,4 +1,5 @@
 using MeuWepApp.Data;
+using MeuWepApp.Repositorio;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DataBase");
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>(options => options.UseSqlServer(connectionString));
 
-//builder.Services.AddScoped<>
+builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ContatoModel>
+@{
     ViewData["Title"] = "Lista de Contatos";
 }
 
@@ -19,43 +20,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>otto@gmail.com</td>
-          <td>73 99191-5643</td>
-          <td>
-              <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a role="button" class="btn btn-outline-primary" asp-controller="Contato" asp-action="Editar">Editar</a>
-                <a role="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Apagar</a>
-              </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>thornton@outlook.com</td>
-          <td>64 99965-2398</td>
-          <td>
-              <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a role="button" class="btn btn-outline-primary" asp-controller="Contato" asp-action="Editar">Editar</a>
-                <a role="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Apagar</a>
-              </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>larry@hotmail.com</td>
-          <td>11 98834-0987</td>
-          <td>
-              <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a role="button" class="btn btn-outline-primary" asp-controller="Contato" asp-action="Editar">Editar</a>
-                <a role="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Apagar</a>
-              </div>
-          </td>
-        </tr>
-      </tbody>
+        @if (Model != null && Model.Any())
+            {
+                foreach (ContatoModel contato in Model)
+                {
+                    <tr>
+                        <th scope="row">@contato.Id</th>
+                        <td>@contato.Name</td>
+                        <td>@contato.Email</td>
+                        <td>@contato.Celular</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <a role="button" class="btn btn-outline-primary" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" asp-route-id="@contato.Id">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
     </table>
 </div>
 
