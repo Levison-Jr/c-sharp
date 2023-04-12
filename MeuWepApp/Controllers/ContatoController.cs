@@ -22,15 +22,23 @@ namespace MeuWepApp.Controllers
             return View();
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            ContatoModel? contato = _contatoRepositorio.BuscarPorId(id);
+            return View(contato);
         }
 
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
         {
             _contatoRepositorio.Adicionar(contato);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Atualizar(ContatoModel contato)
+        {
+            _contatoRepositorio.Update(contato);
             return RedirectToAction("Index");
         }
     }

@@ -16,6 +16,11 @@ namespace MeuWepApp.Repositorio
             return _bancoContext.Contatos.ToList();
         }
 
+        public ContatoModel? BuscarPorId(int id)
+        {
+            return _bancoContext.Contatos.FirstOrDefault(x => x.Id == id);
+        }
+
         public ContatoModel Adicionar(ContatoModel contato)
         {
             // Gravar no banco de dados
@@ -23,6 +28,25 @@ namespace MeuWepApp.Repositorio
             _bancoContext.SaveChanges();
 
             return contato;
+        }
+
+        public ContatoModel Update(ContatoModel contato)
+        {
+            ContatoModel? contatoAtualizar = BuscarPorId(contato.Id);
+
+            if (contatoAtualizar != null)
+            {
+                contatoAtualizar.Name = contato.Name;
+                contatoAtualizar.Email = contato.Email;
+                contatoAtualizar.Celular = contato.Celular;
+
+                _bancoContext.Contatos.Update(contatoAtualizar);
+                _bancoContext.SaveChanges();
+
+                return contatoAtualizar;
+            }
+
+            throw new Exception("Houve um erro na atualização do contato!!!");
         }
 
     }
