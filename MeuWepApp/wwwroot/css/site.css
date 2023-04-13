@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+@media screen and (max-width: 600px) {
+    .tableColumnEmail {
+        display: none;
+    }
+}
