@@ -49,5 +49,20 @@ namespace MeuWepApp.Repositorio
             throw new Exception("Houve um erro na atualização do contato!!!");
         }
 
+        public ContatoModel Delete(int id)
+        {
+            ContatoModel? contatoDeletar = BuscarPorId(id);
+
+            if (contatoDeletar  != null)
+            {
+                _bancoContext.Contatos.Remove(contatoDeletar);
+                _bancoContext.SaveChanges();
+
+                return contatoDeletar;
+            }
+
+            throw new Exception("Houve um erro ao tentar deletar o contato!!!");
+        }
+
     }
 }

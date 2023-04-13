@@ -28,6 +28,12 @@ namespace MeuWepApp.Controllers
             return View(contato);
         }
 
+        public IActionResult Excluir(int id)
+        {
+            ContatoModel? contato = _contatoRepositorio.BuscarPorId(id);
+            return View(contato);
+        }
+
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
         {
@@ -39,6 +45,12 @@ namespace MeuWepApp.Controllers
         public IActionResult Atualizar(ContatoModel contato)
         {
             _contatoRepositorio.Update(contato);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            _contatoRepositorio.Delete(id);
             return RedirectToAction("Index");
         }
     }

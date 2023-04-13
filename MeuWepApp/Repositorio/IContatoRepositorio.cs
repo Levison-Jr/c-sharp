@@ -8,5 +8,6 @@ namespace MeuWepApp.Repositorio
         ContatoModel? BuscarPorId(int id);
         ContatoModel Adicionar(ContatoModel contato);
         ContatoModel Update(ContatoModel contato);
+        ContatoModel Delete(int id);
     }
 }
