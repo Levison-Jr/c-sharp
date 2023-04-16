@@ -9,16 +9,19 @@
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Nome</label>
     <input asp-for="Name" type="text" class="form-control" id="inputNome">
+    @Html.ValidationMessageFor(option => option.Name)
   </div>
 
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Email</label>
     <input asp-for="Email" type="email" class="form-control" id="inputEmail">
+    @Html.ValidationMessageFor(option => option.Email)
   </div>
 
   <div class="col-md-3">
     <label for="inputZip" class="form-label">Celular</label>
     <input asp-for="Celular" type="text" class="form-control" id="inputCelular">
+    @Html.ValidationMessageFor(option => option.Celular)
   </div>
 
   <div class="col-12">

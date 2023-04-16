@@ -17,6 +17,10 @@ body {
   margin-bottom: 60px;
 }
 
+.field-validation-error {
+    color: #c60000;
+}
+
 @media screen and (max-width: 600px) {
     .tableColumnEmail {
         display: none;

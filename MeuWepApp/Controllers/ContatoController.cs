@@ -37,15 +37,25 @@ namespace MeuWepApp.Controllers
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
         {
-            _contatoRepositorio.Adicionar(contato);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _contatoRepositorio.Adicionar(contato);
+                return RedirectToAction("Index");
+            }
+
+            return View(contato);
         }
 
         [HttpPost]
         public IActionResult Atualizar(ContatoModel contato)
         {
-            _contatoRepositorio.Update(contato);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _contatoRepositorio.Update(contato);
+                return RedirectToAction("Index");
+            }
+
+            return View("Editar", contato);
         }
 
         public IActionResult Deletar(int id)
