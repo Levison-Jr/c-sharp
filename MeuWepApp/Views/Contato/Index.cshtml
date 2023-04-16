@@ -4,6 +4,23 @@
 }
 
 <h2 class="display-6">Lista de contatos</h2>
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success d-flex justify-content-between" role="alert">
+        <div>@TempData["MensagemSucesso"]</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["MensagemError"] != null)
+{
+   <div class="alert alert-danger d-flex justify-content-between" role="alert">
+        <div>@TempData["MensagemError"]</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
 <div class="d-flex justify-content-end mt-3">
     <a role="button" class="btn btn-primary" asp-controller="Contato" asp-action="Criar">Novo Contato</a>
 </div>
