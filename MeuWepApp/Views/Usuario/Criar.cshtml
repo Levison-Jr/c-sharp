@@ -1,0 +1,49 @@
+﻿@using MeuWepApp.Enums;
+@model UsuarioModel
+@{
+    ViewData["Title"] = "Cadastrar usuário";
+}
+
+<h2 class="display-6">Adicionar novo usuário</h2>
+
+<form class="row g-3" asp-controller="Usuario" asp-action="Criar" method="post">
+  <div class="col-md-6">
+    <label for="inputNome" class="form-label">Nome</label>
+    <input asp-for="Name" type="text" class="form-control" id="inputNome">
+    @Html.ValidationMessageFor(option => option.Name)
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input asp-for="Email" type="email" class="form-control" id="inputEmail">
+    @Html.ValidationMessageFor(option => option.Email)
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputLogin" class="form-label">Login</label>
+    <input asp-for="Login" type="text" class="form-control" id="inputLogin">
+    @Html.ValidationMessageFor(option => option.Login)
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputPerfil" class="form-label">Perfil</label>
+    <select asp-for="Perfil" class="form-select">
+        <option value="0" selected disabled>Selecione</option>
+        <option value="@PerfilEnum.Admin">Administrador</option>
+        <option value="@PerfilEnum.Default">Padrão</option>
+    </select>
+    @Html.ValidationMessageFor(option => option.Perfil)
+  </div>
+
+
+  <div class="col-md-3">
+    <label for="inputPassword" class="form-label">Senha</label>
+    <input asp-for="Senha" type="password" class="form-control" id="inputPassword">
+    @Html.ValidationMessageFor(option => option.Senha)
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <a class="btn btn-secondary" role="button" asp-controller="Usuario" asp-action="Index">Cancelar</a>
+  </div>
+</form>

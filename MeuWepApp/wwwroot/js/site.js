@@ -4,7 +4,13 @@
 // Write your JavaScript code.
 
 $(document).ready(function () {
-    $('#tabelaContatos').DataTable({
+    applyDataTable("tabelaContatos");
+    applyDataTable("tabelaUsuarios");
+});
+
+function applyDataTable(idTabela) {
+
+    $(`#${idTabela}`).DataTable({
         responsive: true,
         columnDefs: [
             { responsivePriority: 1, targets: 0 },
@@ -20,11 +26,12 @@ $(document).ready(function () {
             sInfoFiltered: "(Filtrar de _MAX_ total registros)",
             sInfoPostFix: "",
             sInfoThousands: ".",
-            sLengthMenu: "Qnt. de contatos por página: _MENU_",
+            sLengthMenu: "_MENU_",
             sLoadingRecords: "Carregando...",
             sProcessing: "Processando...",
             sZeroRecords: "Nenhum registro encontrado",
-            sSearch: "Pesquisar: ",
+            sSearch: "",
+            sSearchPlaceholder: "Pesquisar",
             oPaginate: {
                 sNext: "Próximo",
                 sPrevious: "Anterior",
@@ -37,4 +44,5 @@ $(document).ready(function () {
             }
         }
     });
-});
+
+}

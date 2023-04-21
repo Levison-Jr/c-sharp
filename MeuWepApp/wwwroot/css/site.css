@@ -8,6 +8,19 @@ html {
   }
 }
 
+@media screen and (max-width: 640px) {
+    .dataTables_wrapper .dataTables_length {
+        float: left !important;
+        text-align: center;
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+        margin-top: 0px !important;
+        display: inline-block !important;
+        float: right !important;
+    }
+} 
+
 html {
   position: relative;
   min-height: 100%;
@@ -17,8 +30,13 @@ body {
   margin-bottom: 60px;
 }
 
-#tabelaContatos {
+#tabelaContatos,
+#tabelaUsuarios {
     width: 100% !important;
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 0px;
 }
 
 .field-validation-error {
