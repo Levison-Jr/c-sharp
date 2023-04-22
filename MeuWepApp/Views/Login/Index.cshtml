@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Login";
+}
+
+<div id="conteinerLogin">
+    <div id="boxLogin">
+        <div id="asideLogin">
+            <span class="material-symbols-outlined iconUserLogin">group</span>
+            Contactify
+        </div>
+        <div id="formLogin">
+            <form asp-controller="Login" method="post">
+                <div class="mt-3 mb-2">
+                    <label for="login" class="form-label">Login</label>
+                    <input type="text" class="form-control" id="login" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-4">
+                    <label for="senhaLogin" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senhaLogin">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">ENTRAR</button>
+            </form>
+        </div>
+    </div>
+</div>
