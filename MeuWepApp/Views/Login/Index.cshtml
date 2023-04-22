@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LoginModel
+@{
     Layout = "_LayoutDeslogado";
     ViewData["Title"] = "Login";
 }
@@ -10,16 +11,18 @@
             Contactify
         </div>
         <div id="formLogin">
-            <form asp-controller="Login" method="post">
+            <form asp-controller="Login" asp-action="Entrar" method="post">
                 <div class="mt-3 mb-2">
                     <label for="login" class="form-label">Login</label>
-                    <input type="text" class="form-control" id="login" aria-describedby="emailHelp">
+                    <input asp-for="Login" type="text" class="form-control" id="login">
+                    @Html.ValidationMessageFor(option => option.Login)
                 </div>
-                <div class="mb-4">
+                <div class="mb-0">
                     <label for="senhaLogin" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="senhaLogin">
+                    <input asp-for="Senha" type="password" class="form-control" id="senhaLogin">
+                    @Html.ValidationMessageFor(option => option.Senha)
                 </div>
-                <button type="submit" class="btn btn-primary w-100">ENTRAR</button>
+                <button type="submit" class="btn btn-primary mt-4 mb-3 w-100">ENTRAR</button>
             </form>
         </div>
     </div>
