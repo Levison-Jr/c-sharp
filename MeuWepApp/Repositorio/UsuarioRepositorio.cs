@@ -11,6 +11,12 @@ namespace MeuWepApp.Repositorio
         {
             _bancoContext = bancoContext;
         }
+
+        public UsuarioModel? BuscarPorLogin(string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(option => option.Login.ToLower() == login.ToLower());
+        }
+
         public List<UsuarioModel> BuscarTodos()
         {
             return _bancoContext.Usuarios.ToList();

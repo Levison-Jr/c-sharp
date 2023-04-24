@@ -1,10 +1,18 @@
 ﻿using MeuWepApp.Models;
+using MeuWepApp.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuWepApp.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
+
+        public LoginController(IUsuarioRepositorio usuarioRepositorio)
+        {
+            _usuarioRepositorio = usuarioRepositorio;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -17,7 +25,20 @@ namespace MeuWepApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Index", "Home");
+                    UsuarioModel? usuario = _usuarioRepositorio.BuscarPorLogin(loginModel.Login);
+
+                    if (usuario != null)
+                    {
+                        if (loginModel.Senha == usuario.Senha)
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                        TempData["MensagemError"] = $"Senha incorreta! Por favor, tente novamente.";
+                    }
+                    else
+                    {
+                        TempData["MensagemError"] = $"Login e/ou senha incorreto(s)! Por favor, tente novamente.";
+                    }
                 }
 
                 return View("Index");
