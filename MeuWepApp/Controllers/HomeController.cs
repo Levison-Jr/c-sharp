@@ -1,6 +1,7 @@
 ﻿using MeuWepApp.Filters;
 using MeuWepApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace MeuWepApp.Controllers
@@ -10,8 +11,15 @@ namespace MeuWepApp.Controllers
     {
         public IActionResult Index()
         {
-            HomeModel home = new HomeModel("Levison Jr", "levisonjr21@gmail.com");
-            return View(home);
+            string? sessaoUsuario = HttpContext.Session.GetString("sessaoUsuarioLogado");
+
+            if (string.IsNullOrEmpty(sessaoUsuario))
+            {
+                return View(new UsuarioModel { });
+            }
+            
+            UsuarioModel? usuario = JsonConvert.DeserializeObject<UsuarioModel>(sessaoUsuario);
+            return View(usuario);
         }
 
         public IActionResult Privacy()
