@@ -1,9 +1,11 @@
-﻿using MeuWepApp.Models;
+﻿using MeuWepApp.Filters;
+using MeuWepApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace MeuWepApp.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class HomeController : Controller
     {
         public IActionResult Index()

@@ -1,9 +1,11 @@
-﻿using MeuWepApp.Models;
+﻿using MeuWepApp.Filters;
+using MeuWepApp.Models;
 using MeuWepApp.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuWepApp.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class ContatoController : Controller
     {
         private readonly IContatoRepositorio _contatoRepositorio;

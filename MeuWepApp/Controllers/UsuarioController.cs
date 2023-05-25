@@ -1,9 +1,11 @@
-﻿using MeuWepApp.Models;
+﻿using MeuWepApp.Filters;
+using MeuWepApp.Models;
 using MeuWepApp.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuWepApp.Controllers
 {
+    [PaginaSomenteAdmin]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
