@@ -6,7 +6,7 @@
         {
             try
             {
-                BankAccount customer_1 = new("John Doe", 200);
+                InterestEarningAccount customer_1 = new("John Doe", 200);
                 Console.WriteLine(customer_1.Balance);
 
                 customer_1.MakeDeposit(200, DateTime.Now, "Reservas");
@@ -14,6 +14,8 @@
 
                 customer_1.MakeWithdrawal(150m, DateTime.Now, "Contas");
                 Console.WriteLine(customer_1.Balance);
+
+                customer_1.EndMonthTask();
 
                 Console.WriteLine(customer_1.GetAccountHistory());
             }
