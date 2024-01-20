@@ -6,7 +6,7 @@
         {
             try
             {
-                InterestEarningAccount customer_1 = new("John Doe", 200);
+                GiftCardAccount customer_1 = new("John Doe", 200, 35.5m);
                 Console.WriteLine(customer_1.Balance);
 
                 customer_1.MakeDeposit(200, DateTime.Now, "Reservas");
