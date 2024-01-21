@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace OOP_Bank_Example
@@ -7,6 +8,8 @@ namespace OOP_Bank_Example
     {
         public Guid Number { get; }
         private readonly string _owner;
+        private readonly decimal _minimumBalance;
+
         public decimal Balance
         {
             get
@@ -20,12 +23,14 @@ namespace OOP_Bank_Example
             }
         }
 
-        public BankAccount(string name, decimal initialBalance)
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance = 0)
         {
             Number = Guid.NewGuid();
             _owner = name;
+            _minimumBalance = minimumBalance;
 
-            MakeDeposit(initialBalance, DateTime.Now, "Depósito inicial.");
+            if (initialBalance > 0)
+                MakeDeposit(initialBalance, DateTime.Now, "Depósito inicial.");
         }
 
         private List<Transaction> _allTransactions = new List<Transaction>();
@@ -48,13 +53,24 @@ namespace OOP_Bank_Example
                 throw new ArgumentOutOfRangeException(nameof(amount), "O valor do saque deve ser maior do que zero.");
             }
 
-            if (Balance - amount < 0)
+            Transaction? overdraftTransaction = CheckWithDrawalLimit(Balance - amount < _minimumBalance);       
+            Transaction withdrawal = new(-amount, date, note);
+            _allTransactions.Add(withdrawal);
+
+            if (overdraftTransaction != null)
+                _allTransactions.Add(overdraftTransaction);
+        }
+
+        protected virtual Transaction? CheckWithDrawalLimit(bool isOverDrawal)
+        {
+            if (isOverDrawal)
             {
                 throw new InvalidOperationException("Saldo insuficiente para realizar este saque.");
             }
-
-            Transaction withdrawal = new(-amount, date, note);
-            _allTransactions.Add(withdrawal);
+            else
+            {
+                return default;
+            }
         }
 
         public string GetAccountHistory()
