@@ -6,7 +6,7 @@ public class ConsoleUI
 {
     public static void Main()
     {
-        Console.WriteLine("Hello, Console!");
-        Class1.HelloFromClassLib();
+        Veiculo v1 = new("Branco", "Ford", "QKZ-A238", 149.97m);
+        Console.WriteLine(v1.Placa);
     }
 }
